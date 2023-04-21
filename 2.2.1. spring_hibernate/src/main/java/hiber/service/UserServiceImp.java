@@ -38,7 +38,7 @@ public class UserServiceImp implements UserService {
         return userDao.listUsers();
     }
 
-    @Transactional(propagation = Propagation.NOT_SUPPORTED)
+    @Transactional(readOnly = true, propagation = Propagation.NOT_SUPPORTED)
     @Override
     public User getUserByCar(String model, int series) {
         return userDao.getUserByCar(model, series);
