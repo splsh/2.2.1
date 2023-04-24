@@ -32,13 +32,13 @@ public class UserServiceImp implements UserService {
         userDao.add(car);
     }
 
-    @Transactional(readOnly = true, propagation = Propagation.NOT_SUPPORTED)
+    @Transactional(readOnly = true)
     @Override
     public List<User> listUsers() {
         return userDao.listUsers();
     }
 
-    @Transactional(readOnly = true, propagation = Propagation.NOT_SUPPORTED)
+    @Transactional(readOnly = true)
     @Override
     public User getUserByCar(String model, int series) {
         return userDao.getUserByCar(model, series);
